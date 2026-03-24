@@ -1,0 +1,3 @@
+[submodule "mdc/model/DataModel"]
+	path = mdc/model/DataModel
+	url = https://github.boschdevcloud.com/ISS-P/DataModel.git

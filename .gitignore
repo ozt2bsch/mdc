@@ -1,0 +1,7 @@
+.venv
+.vscode
+!mdc/model/DataModel
+poetry.lock
+__pycache__
+dist
+build
