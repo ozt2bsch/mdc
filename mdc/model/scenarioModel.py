@@ -62,7 +62,7 @@ class ScenarioModel():
         def as_json(self) -> json:
             """Get Comment as json format"""
 
-            return json.dump(self.as_dict)
+            return json.dumps(self.as_dict)
 
         def isValid(self) -> tuple[bool, Scenario | None]:
             """Validate comment"""
@@ -85,7 +85,7 @@ class ScenarioModel():
             def __init__(self, model: ScenarioModel):
                 self.model = model
 
-            def __something(self, container: list, data: ScenarioModel.Scenario | dict | None) -> bool:
+            def __store(self, container: list, data: ScenarioModel.Scenario | dict | None) -> bool:
                 isValid,_ = data.isValid()
                 if isValid:
                     if not container:
@@ -104,13 +104,13 @@ class ScenarioModel():
             def __parse(self, container: list, data: ScenarioModel.Scenario | dict | None):
                 match data:
                     case None:
-                        return self.__something(container, self.model.scenario)
+                        return self.__store(container, self.model.scenario)
                     case ScenarioModel.Scenario():
-                        return self.__something(container, data)
+                        return self.__store(container, data)
                     case dict():
                         try:
                             scenario = ScenarioModel.Scenario(**data)
-                            return self.__something(container, scenario)
+                            return self.__store(container, scenario)
                         except Exception as e:
                             print("Data is not in correct format. Please check.")
                             return False
