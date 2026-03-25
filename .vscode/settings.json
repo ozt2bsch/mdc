@@ -1,5 +1,12 @@
 {
     "python.analysis.extraPaths": [
         "./mdc/model/DataModel"
+    ],
+    "python-envs.defaultEnvManager": "ms-python.python:poetry",
+    "python-envs.defaultPackageManager": "ms-python.python:poetry",
+    "python.testing.pytestArgs": [
+        "${workspaceFolder}/tests",
+        "-v",
+        "-s"
     ]
 }

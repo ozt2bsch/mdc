@@ -11,6 +11,7 @@ pyside6 = "^6.10.2"
 pydantic = "1.10.2"
 data-model = {path = "mdc/model/DataModel", develop = true}
 pytest = "^9.0.2"
+pyclean = "^3.5.0"
 
 [tool.poetry.scripts]
 mdc = 'mdc.__main__:main'

@@ -3,5 +3,6 @@
 !mdc/model/DataModel
 poetry.lock
 __pycache__
+.pytest_cache
 dist
 build
