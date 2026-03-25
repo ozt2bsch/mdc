@@ -4,5 +4,6 @@
 poetry.lock
 __pycache__
 .pytest_cache
+*.pyc
 dist
 build
