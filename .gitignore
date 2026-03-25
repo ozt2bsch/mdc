@@ -5,5 +5,8 @@ poetry.lock
 __pycache__
 .pytest_cache
 *.pyc
+Settings/crs.json
+Settings/Persons.json
+Settings/Supervisors.json
 dist
 build
