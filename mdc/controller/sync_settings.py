@@ -1,6 +1,9 @@
 import os,sys
 import json
 from mdc.controller.configini_parser import configHandler
+from mdc.model.scenarioModel import ScenarioModel
+from data_model.dbgui_input import DbGuiInput,PersonListInput,SupervisorsListInput,CRSInfoListInput
+from mdc.model.supervisorModel import SupervisorModel
 
 #Check input_data.json file exists
 if not os.path.isfile(os.path.join(configHandler.input_json)):
@@ -28,3 +31,22 @@ if not os.path.isfile(os.path.join(configHandler.crs_json)):
     with open(os.path.join(configHandler.crs_json),'w',encoding="utf-8") as f:
         json.dump({"crs_info": []}, f, indent=2)
 
+#parse input_data.json
+with open(configHandler.input_json,'r',encoding="utf-8") as f:
+    oDBGuiInput = DbGuiInput(**json.load(f))
+
+#fetch and store scenarios
+print("parsing scenarios...")
+print(" ",len(oDBGuiInput.scenarios) if oDBGuiInput.scenarios else 0, "Scenario(s) found in input_data.json")
+if oDBGuiInput.scenarios:
+    for scn in oDBGuiInput.scenarios:
+        ScenarioModel().store_to.pool(ScenarioModel.Scenario(**scn.dict()))
+
+#fetch and store supervisors
+print("parsing supervisors...")
+print(" ",len(oDBGuiInput.supervisors) if oDBGuiInput.supervisors else 0, "Supervisor(s) found in input_data.json")
+if oDBGuiInput.supervisors:
+    for sv in oDBGuiInput.supervisors:
+        SupervisorModel().store_to.pool(SupervisorModel.Supervisor(**sv.dict()))
+
+pass

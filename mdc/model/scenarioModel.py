@@ -64,7 +64,7 @@ class ScenarioModel():
 
             return json.dumps(self.as_dict)
 
-        def isValid(self) -> tuple[bool, Scenario | None]:
+        def is_valid(self) -> tuple[bool, Scenario | None]:
             """Validate comment"""
 
             try:
@@ -79,27 +79,30 @@ class ScenarioModel():
     def reset(self):
         self.scenario = self.Scenario()
 
+
     @property
     def store_to(self):
         class To():
             def __init__(self, model: ScenarioModel):
                 self.model = model
 
-            def __store(self, container: list, data: ScenarioModel.Scenario | dict | None) -> bool:
-                isValid,_ = data.isValid()
+            def __store(self, container: list, data: ScenarioModel.Scenario) -> bool:
+                isValid,_ = data.is_valid()
                 if isValid:
                     if not container:
                         container.append(copy.deepcopy(data))
+                        print(f"Scenario '{data.id}' added to container")
                         return True
                     for idx,scn in enumerate(container):
                         if scn.id == data.id:
                             container[idx] = copy.deepcopy(data)
+                            print(f"Scenario '{data.id}' updated in container")
                             return True
                     container.append(copy.deepcopy(data))
+                    print(f"Scenario '{data.id}' added to container")
                     return True
-                else:
-                    print("Scenario is not valid. Please check the scenario data.")
-                    return False
+                print(f"Scenario '{data.id}' is not valid. Please check the scenario data.")
+                return False
 
             def __parse(self, container: list, data: ScenarioModel.Scenario | dict | None):
                 match data:
