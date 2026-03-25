@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "mdc"
+version = "0.0.1"
+description = ""
+authors = ["Ozsvath Tamas <tozsvath@outlook.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.11,<3.15"
+pyside6 = "^6.10.2"
+pydantic = "1.10.2"
+data-model = {path = "mdc/model/DataModel", develop = true}
+pytest = "^9.0.2"
+
+[tool.poetry.scripts]
+mdc = 'mdc.__main__:main'
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
