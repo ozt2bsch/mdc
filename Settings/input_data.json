@@ -1,0 +1,777 @@
+{
+  "_id": "2024_DMS_Ford_Dat3_Nissan_RNG",
+  "location": {
+    "city": "Renningen",
+    "continent": "Europe",
+    "country": "Germany",
+    "state": null
+  },
+  "recording_campaign": {
+    "_id": "2024_DMS_Ford_Dat3",
+    "locations": [
+      {
+        "city": "Renningen",
+        "continent": "Europe",
+        "country": "Germany",
+        "state": "Baden-Wuerttemberg"
+      },
+      {
+        "city": "Ingoldstadt",
+        "continent": "Europe",
+        "country": "Germany",
+        "state": "Bavaria"
+      },
+      {
+        "city": "Sofia",
+        "continent": "Europe",
+        "country": "Bulgaria"
+      }
+    ],
+    "pretest": false,
+    "projects": [
+      "ford dat3 dms"
+    ],
+    "scenarios_ref": [
+      {
+        "_id": "SyncLEDir_Val_Pretest_01",
+        "collection": "scenarios",
+        "database": null
+      },
+      {
+        "_id": "CalibrationRod_Val_01",
+        "collection": "scenarios",
+        "database": null
+      },
+      {
+        "_id": "TargetROI_Points_Val_01",
+        "collection": "scenarios",
+        "database": null
+      },
+      {
+        "_id": "TargetROI_Zones_Val_01",
+        "collection": "scenarios",
+        "database": null
+      },
+      {
+        "_id": "Driver_In_Drive_Out_Val_01",
+        "collection": "scenarios",
+        "database": null
+      },
+      {
+        "_id": "Abnormal_Headpose_Val_01",
+        "collection": "scenarios",
+        "database": null
+      },
+      {
+        "_id": "Phone_Usage_Val_01",
+        "collection": "scenarios",
+        "database": null
+      },
+      {
+        "_id": "Phone_Usage_No_Head_Target",
+        "collection": "scenarios",
+        "database": null
+      },
+      {
+        "_id": "Smoking_Val_01",
+        "collection": "scenarios",
+        "database": null
+      },
+      {
+        "_id": "Smoking_No_Head_Target",
+        "collection": "scenarios",
+        "database": null
+      },
+      {
+        "_id": "Yawning_Val_01",
+        "collection": "scenarios",
+        "database": null
+      },
+      {
+        "_id": "Speaking_Val_01",
+        "collection": "scenarios",
+        "database": null
+      },
+      {
+        "_id": "Eyes_Close_Val_01",
+        "collection": "scenarios",
+        "database": null
+      },
+      {
+        "_id": "Naturalistic_Drive_TargetROI_Points_Val_01",
+        "collection": "scenarios",
+        "database": null
+      },
+      {
+        "_id": "Drowsiness_Simulator_Val_01",
+        "collection": "scenarios",
+        "database": null
+      },
+      {
+        "_id": "Fake_Driver_Paper_Static_01",
+        "collection": "scenarios",
+        "database": null
+      },
+      {
+        "_id": "Fake_Driver_Paper_Dynamic_01",
+        "collection": "scenarios",
+        "database": null
+      },
+      {
+        "_id": "Fake_Driver_Paper_Deformed_01",
+        "collection": "scenarios",
+        "database": null
+      },
+      {
+        "_id": "Fake_Driver_Doll_Unrealistic_Static_01",
+        "collection": "scenarios",
+        "database": null
+      },
+      {
+        "_id": "Fake_Driver_Doll_Unrealistic_Dynamic_01",
+        "collection": "scenarios",
+        "database": null
+      },
+      {
+        "_id": "Fake_Driver_Doll_Lifelike_Static_01",
+        "collection": "scenarios",
+        "database": null
+      },
+      {
+        "_id": "Fake_Driver_Doll_Lifelike_Dynamic_01",
+        "collection": "scenarios",
+        "database": null
+      },
+      {
+        "_id": "Fake_Driver_Video_01",
+        "collection": "scenarios",
+        "database": null
+      }
+    ],
+    "specification": [
+      {
+        "link": "https://inside-docupedia.bosch.com/confluence/x/bRFj3g",
+        "revision": null,
+        "type": "docupedia"
+      },
+      {
+        "link": "https://rb-alm-19-p-dwa.de.bosch.com:8443/dwa/rm/urn:rational::1-0000000000000000-M-00055bff&osUser=true",
+        "revision": "1.7",
+        "type": "doors"
+      }
+    ],
+    "years": [
+      2024
+    ]
+  },
+  "scenarios": [
+    {
+      "_id": "SyncLEDir_Val_Pretest_01",
+      "creation_timestamp": "2023-04-18T15:01:47.470484",
+      "description": "Scenario goal:\n- Provide data to check synchronisation of systems\n\nPrerequisite:\n    - SyncLEDir Body must be included in SmartTrack\n\nScenario description:\n    - Start of recording\n    - Hold SyncLEDir in front of the systems and check if all FoVs include SyncLEDir box and backprojection filter recognizes SyncLEDir \n    - Stop of recording",
+      "name": "SyncLEDir Val Pretest 01",
+      "primary_usecase": "validation",
+	  "facial_landmarks_mandatory": true,
+      "specification": [
+        {
+          "link": "https://rb-alm-19-p-dwa.de.bosch.com:8443/dwa/rm/urn:rational::1-0000000000000000-O-667-00058320?doors.view=00000002&osUser=true",
+          "revision": null,
+          "type": "doors"
+        }
+      ],
+      "tags": null
+    },
+    {
+      "_id": "CalibrationRod_Val_01",
+      "creation_timestamp": "2023-04-11T15:45:01.174920",
+      "description": "Scenario goal:\n- Provide calibration files\n\nScenario prerequisite:\n- No person shall be visible in the recording\n- Steering wheel and driver seat settings must be set to driver's normal driving position\n- Calibration rod must be inside the vehicle and correct mounting must be checked\n\nScenario description:\n- Start of recording\n- Execute calibration tool\n- Stop of recording",
+      "name": "Calibration Rod Val 01",
+	  "facial_landmarks_mandatory": true,
+      "primary_usecase": "validation",
+      "specification": [
+        {
+          "link": "https://rb-alm-19-p-dwa.de.bosch.com:8443/dwa/rm/urn:rational::1-0000000000000000-V-578-00058320-1000000&osUser=true",
+          "revision": null,
+          "type": "doors"
+        }
+      ],
+      "tags": null
+    },
+    {
+      "_id": "TargetROI_Points_Val_01",
+      "creation_timestamp": "2023-04-11T15:45:01.174920",
+      "description": "Scenario goal:\n- Provide data for eye gaze\n- TargetROI activities:\n  - Driver looks at defined target points in the vehicle\n  - Driver shall try not to blink for the duration of the confirmation\n\nScenario prerequisite:\n- Driver wears head target \n- List and Schedule for Target Points are linked in TargetROI GUI\n- TargetROI GUI is visible to the driver and audio is audible on the driver seat\n- Driver sits on driver seat, wears seatbelt and vehicle doors are closed\n\nScenario description:\n- Start of recording and Target ROI GUI\n- Driver must move their head in a slow 8-movement for ~10s\n- Driver confirms the instructions given by the TargetROI GUI and executes them till the next action is announced\n- Driver repeats the process until Target ROI GUI announces \"\"Measurement finished\"\"\n- Stop of recording",
+      "facial_landmarks_mandatory": true,
+      "name": "TargetROI Points Val 01",
+      "primary_usecase": "validation",
+      "specification": [
+        {
+          "link": "https://rb-alm-19-p-dwa.de.bosch.com:8443/dwa/rm/urn:rational::1-0000000000000000-V-567-00058320-1000000&osUser=true",
+          "revision": null,
+          "type": "doors"
+        }
+      ],
+      "tags": null
+    },
+    {
+      "_id": "TargetROI_Zones_Val_01",
+      "creation_timestamp": "2023-04-11T15:45:01.174920",
+      "description": "Scenario goal:\n- Provide data for vehicle zones\n- TargetROI activities:\n  - Driver looks at defined zones in the vehicle\n  - Driver shall try not to blink for the duration of the confirmation\n\nScenario prerequisite:\n- Driver wears head target \n- List and Schedule for Target Zones are linked in TargetROI GUI\n- TargetROI GUI is visible to the driver and audio is audible on the driver seat\n- Driver sits on driver seat, wears seatbelt and vehicle doors are closed\n\nScenario description:\n- Start of recording and Target ROI GUI\n- Driver must move their head in a slow 8-movement for ~10s\n- Driver confirms the instructions given by the TargetROI GUI and executes them till the next action is announced\n- Driver repeats the process until Target ROI GUI announces \"\"Measurement finished\"\"\n- Stop of recording",
+      "facial_landmarks_mandatory": true,
+      "name": "TargetROI Zones Val 01",
+      "primary_usecase": "validation",
+      "specification": [
+        {
+          "link": "https://rb-alm-19-p-dwa.de.bosch.com:8443/dwa/rm/urn:rational::1-0000000000000000-V-581-00058320-1000000&osUser=true",
+          "revision": null,
+          "type": "doors"
+        }
+      ],
+      "tags": null
+    },
+    {
+      "_id": "Driver_In_Drive_Out_Val_01",
+      "creation_timestamp": "2023-04-11T15:45:01.174920",
+      "description": "Scenario goal:\n- Provide data for entry of driver, driver presence and exit of driver\n\nScenario prerequisite:\n- Driver wears head target \n- No person is visible in the images at the beginning and in the end of the recording\n\nScenario description:\n- Start of recording\n- Driver executes their normal entry routine: Open door, enter vehicle, close door, fasten seatbelt,...\n- Driver acts as if he is driving for 2 min\n- Driver executes their normal exit routine: Unbuckling, open door, exit the vehicle, close door,..\n- Stop of recording",
+      "facial_landmarks_mandatory": true,
+      "name": "Driver In Drive Out Val 01",
+      "primary_usecase": "validation",
+      "specification": [
+        {
+          "link": "https://rb-alm-19-p-dwa.de.bosch.com:8443/dwa/rm/urn:rational::1-0000000000000000-V-572-00058320-1000000&osUser=true",
+          "revision": null,
+          "type": "doors"
+        }
+      ],
+      "tags": null
+    },
+    {
+      "_id": "Abnormal_Headpose_Val_01",
+      "creation_timestamp": "2023-04-11T15:45:01.174920",
+      "description": "Scenario goal:\n- Provide data for headposes above the abnormal thresholds\n- Target ROI activities:\n    - Head up > 30°\n    - Head down >30°\n    - Head left > 45°\n    - Head right > 45°\n\nScenario prerequisite:\n- Driver wears head target \n- List and Schedule for Abnormal Headpose are linked in TargetROI GUI\n- TargetROI GUI is visible to the driver and audio is audible on the driver seat\n- Driver sits on driver seat, wears seatbelt and vehicle doors are closed\n\nScenario description:\n- Start of recording and Target ROI GUI\n- Driver must move their head in a slow 8-movement for ~10s\n- Driver confirms the instructions given by the TargetROI GUI and executes them till the next action is announced\n- Driver repeats the process until Target ROI GUI announces \"\"Measurement finished\"\"\n- Stop of recording",
+      "facial_landmarks_mandatory": true,
+      "name": "Abnormal Headpose Val 01",
+      "primary_usecase": "validation",
+      "specification": [
+        {
+          "link": "https://rb-alm-19-p-dwa.de.bosch.com:8443/dwa/rm/urn:rational::1-0000000000000000-V-566-00058320-1000000&osUser=true",
+          "revision": null,
+          "type": "doors"
+        }
+      ],
+      "tags": null
+    },
+    {
+      "_id": "Phone_Usage_Val_01",
+      "creation_timestamp": "2023-04-11T15:45:01.174920",
+      "description": "Scenario goal:\n- Provide data with phones\n- Target ROI activities:\n   - Phone near left ear\n   - Phone near right ear\n   - Phone centered near mouth\n\nScenario prerequisite:\n- Driver wears head target \n- List and Schedule for PhoneUsage are linked in TargetROI GUI\n- TargetROI GUI is visible to the driver and audio is audible on the driver seat\n- Driver sits on driver seat, wears seatbelt and vehicle doors are closed\n\nScenario description:\n- Start of recording and Target ROI GUI\n- Driver must move their head in a slow 8-movement for ~10s\n- Driver confirms the instructions given by the TargetROI GUI and executes them till the next action is announced\n- Driver repeats the process until Target ROI GUI announces \"Measurement finished\"\n- Stop of recording",
+      "facial_landmarks_mandatory": true,
+      "name": "Phone Usage Val 01",
+      "primary_usecase": "validation",
+      "specification": [
+        {
+          "link": "https://rb-alm-19-p-dwa.de.bosch.com:8443/dwa/rm/urn:rational::1-0000000000000000-V-569-00058320-1000000&osUser=true",
+          "revision": null,
+          "type": "doors"
+        }
+      ],
+      "tags": null
+    },
+    {
+      "_id": "Phone_Usage_No_Head_Target",
+      "creation_timestamp": "2024-02-09T13:45:01.174920",
+      "description": "Scenario goal:\n- Provide data with phones\n- Target ROI activities:\n   - Phone near left ear\n   - Phone near right ear\n   - Phone centered near mouth\n\nScenario prerequisite:\n- Driver does NOT wear head target \n- List and Schedule for PhoneUsage are linked in TargetROI GUI\n- TargetROI GUI is visible to the driver and audio is audible on the driver seat\n- Driver sits on driver seat, wears seatbelt and vehicle doors are closed\n\nScenario description:\n- Start of recording and Target ROI GUI\n- Driver must move their head in a slow 8-movement for ~10s\n- Driver confirms the instructions given by the TargetROI GUI and executes them till the next action is announced\n- Driver repeats the process until Target ROI GUI announces \"Measurement finished\"\n- Stop of recording",
+      "facial_landmarks_mandatory": false,
+      "name": "Phone Usage No Head Target",
+      "primary_usecase": "validation",
+      "specification": [
+        {
+          "link": "https://rb-alm-19-p-dwa.de.bosch.com:8443/dwa/rm/urn:rational::1-0000000000000000-O-1074-00058320?doors.view=00000002&osUser=true",
+          "revision": null,
+          "type": "doors"
+        }
+      ],
+      "tags": null
+    },
+    {
+      "_id": "Smoking_Val_01",
+      "creation_timestamp": "2023-10-18T13:09:01.174920",
+      "description": "Scenario goal:\n- Provide data with cigarettes \n- TargetROI activities \n   - Hold a cigarette (object length must be >= 3cm) and make sure >60% is visible and its <2cm away from the head \n 1) Cigarette in mouth between fingers \n 2) Cigarette in mouth held with end of fingers \n 3) Cigarette only in mouth \n 4) Cigarette close to face <2cm away \n\nScenario prerequisite:\n- Driver wears head target \n- List and Schedule for Smoking are linked in TargetROI GUI \n- TargetROI GUI is visible to the driver and audio is audible on the driver seat\n- Driver sits on driver seat, wears seatbelt and vehicle doors are closed \n\nScenario description:\n- Start of recording and Target ROI GUI\n- Driver must move their head in a slow 8-movement for ~10s\n- Driver confirms the instructions given by the TargetROI GUI and executes them till the next action is announced\n- Driver repeats the process until Target ROI GUI announces \"Measurement finished\"\n- Stop of recording",
+      "facial_landmarks_mandatory": true,
+      "name": "Smoking Val 01",
+      "primary_usecase": "validation",
+      "specification": [
+        {
+          "link": "https://rb-alm-19-p-dwa.de.bosch.com:8443/dwa/rm/urn:rational::1-0000000000000000-O-570-00058320?doors.view=00000002&osUser=true",
+          "revision": null,
+          "type": "doors"
+        }
+      ],
+      "tags": null
+    },
+    {
+      "_id": "Smoking_No_Head_Target",
+      "creation_timestamp": "2024-02-09T13:09:01.174920",
+      "description": "Scenario goal:\n- Provide data with cigarettes \n- TargetROI activities \n   - Hold a cigarette (object length must be >= 3cm) and make sure >60% is visible and its <2cm away from the head \n 1) Cigarette in mouth between fingers \n 2) Cigarette in mouth held with end of fingers \n 3) Cigarette only in mouth \n 4) Cigarette close to face <2cm away \n\nScenario prerequisite:\n- Driver does NOT wear head target \n- List and Schedule for Smoking are linked in TargetROI GUI \n- TargetROI GUI is visible to the driver and audio is audible on the driver seat\n- Driver sits on driver seat, wears seatbelt and vehicle doors are closed \n\nScenario description:\n- Start of recording and Target ROI GUI\n- Driver must move their head in a slow 8-movement for ~10s\n- Driver confirms the instructions given by the TargetROI GUI and executes them till the next action is announced\n- Driver repeats the process until Target ROI GUI announces \"Measurement finished\"\n- Stop of recording",
+      "facial_landmarks_mandatory": false,
+      "name": "Smoking No Head Target",
+      "primary_usecase": "validation",
+      "specification": [
+        {
+          "link": "https://rb-alm-19-p-dwa.de.bosch.com:8443/dwa/rm/urn:rational::1-0000000000000000-O-1075-00058320?doors.view=00000002&osUser=true",
+          "revision": null,
+          "type": "doors"
+        }
+      ],
+      "tags": null
+    },
+    {
+      "_id": "Yawning_Val_01",
+      "creation_timestamp": "2023-10-18T13:13:01.174920",
+      "description": "Scenario goal:\n- Provide data for behavior yawning \n- TargetROI activities \n   1) Look at windshield and yawn \n   2) Look at right outer windshield and yawn \n   3) Look at left mirror and yawn \n\nScenario prerequisite:\n- Driver wears head target \n- List and Schedule for Yawning are linked in TargetROI GUI \n- TargetROI GUI is visible to the driver and audio is audible on the driver seat\n- Driver sits on driver seat, wears seatbelt and vehicle doors are closed \n\nScenario description:\n- Start of recording and Target ROI GUI\n- Driver must move their head in a slow 8-movement for ~10s\n- Driver confirms the instructions given by the TargetROI GUI and executes them till the next action is announced\n- Driver repeats the process until Target ROI GUI announces \"Measurement finished\"\n- Stop of recording",
+      "facial_landmarks_mandatory": true,
+      "name": "Yawning Val 01",
+      "primary_usecase": "validation",
+      "specification": [
+        {
+          "link": "https://rb-alm-19-p-dwa.de.bosch.com:8443/dwa/rm/urn:rational::1-0000000000000000-O-583-00058320?doors.view=00000002&osUser=true",
+          "revision": null,
+          "type": "doors"
+        }
+      ],
+      "tags": null
+    },
+    {
+      "_id": "Speaking_Val_01",
+      "creation_timestamp": "2023-10-18T13:15:20.174920",
+      "description": "Scenario goal:\n- Provide data for behavior speaking \n- TargetROI activities \n   1) Look at windshield and speak \n   2) Look at right outer windshield and speak \n   3) Look at left mirror and speak \n\nScenario prerequisite:\n- Driver wears head target \n- List and Schedule for Speaking are linked in TargetROI GUI \n- TargetROI GUI is visible to the driver and audio is audible on the driver seat\n- Driver sits on driver seat, wears seatbelt and vehicle doors are closed \n\nScenario description:\n- Start of recording and Target ROI GUI\n- Driver must move their head in a slow 8-movement for ~10s\n- Driver confirms the instructions given by the TargetROI GUI and executes them till the next action is announced\n- Driver repeats the process until Target ROI GUI announces \"Measurement finished\"\n- Stop of recording",
+      "facial_landmarks_mandatory": true,
+      "name": "Speaking Val 01",
+      "primary_usecase": "validation",
+      "specification": [
+        {
+          "link": "https://rb-alm-19-p-dwa.de.bosch.com:8443/dwa/rm/urn:rational::1-0000000000000000-O-571-00058320?doors.view=00000002&osUser=true",
+          "revision": null,
+          "type": "doors"
+        }
+      ],
+      "tags": null
+    },
+    {
+      "_id": "Eyes_Close_Val_01",
+      "creation_timestamp": "2023-04-11T15:45:01.174920",
+      "description": "Scenario goal:\n- Provide data for closed eyes\n- TargetROI activities:\n  - Driver looks at defined target points in the vehicle with closed eyes\n\nPrerequisite:\n- Driver wears head target \n- List and Schedule for Eyes Close are linked in TargetROI GUI\n- TargetROI GUI is visible to the driver and audio is audible on the driver seat\n- Driver sits on driver seat, wears seatbelt and vehicle doors are closed\n\nScenario description:\n- Start of recording and Target ROI GUI\n- Driver must move their head in a slow 8-movement for ~10s\n- Driver confirms the instructions given by the TargetROI GUI and executes them till the next action is announced\n- Driver repeats the process until Target ROI GUI announces \"\"Measurement finished\"\"\n- Stop of recording\n",
+      "facial_landmarks_mandatory": true,
+      "name": "Eyes Close Val 01",
+      "primary_usecase": "validation",
+      "specification": [
+        {
+          "link": "https://rb-alm-19-p-dwa.de.bosch.com:8443/dwa/rm/urn:rational::1-0000000000000000-V-573-00058320-1000000&osUser=true",
+          "revision": null,
+          "type": "doors"
+        }
+      ],
+      "tags": null
+    },
+    {
+      "_id": "Naturalistic_Drive_TargetROI_Points_Val_01",
+      "creation_timestamp": "2023-04-11T15:45:01.175920",
+      "description": "Scenario goal:\n- Provide data of a drive in real traffic\n- Duration: >30 min\n- TargetROI activities\n  - Driver looks at target points from TargetROI_Points_Val_01 if traffic allows it\n\nPrerequisite:\n- Driver wears head target \n- List and Schedule for Target Points are linked in TargetROI GUI\n- TargetROI GUI is visible to the driver and audio is audible on the driver seat\n- Driver sits on driver seat, wears seatbelt and vehicle doors are closed\n\nScenario description:\n- Start of recording and Target ROI GUI\n- Driver must move their head in a slow 8-movement for ~10s\n- Driver starts the drive\n- Driver follows route shown by navigation device  or provided by supervisor\n- When the traffic allows it, driver confirms the instructions given by the TargetROI GUI and executes them till the next action is announced\n- Driver drives for > 30 minutes or until Target ROI announces \"\"Measurement finished\"\"\n- Driver drives to a secure parking slot and stops the drive \n- Stop of recording",
+      "facial_landmarks_mandatory": true,
+      "name": "Naturalistic Drive TargetROI Points Val 01",
+      "primary_usecase": "validation",
+      "specification": [
+        {
+          "link": "https://rb-alm-19-p-dwa.de.bosch.com:8443/dwa/rm/urn:rational::1-0000000000000000-V-568-00058320-1000000&osUser=true",
+          "revision": null,
+          "type": "doors"
+        }
+      ],
+      "tags": null
+    },
+    {
+      "_id": "Drowsiness_Simulator_Val_01",
+      "creation_timestamp": "2023-09-18T13:47:40.175920",
+      "description": "Scenario goal:\n- Provide data of people with various drowsiness levels in a simulator\n- Duration: 1-6h\n- Rating GUI:\n  - Driver must rate himself on KSS scale from 1 to 9 every 5min\n  - Driver drives until they fall asleep or until they have a KSS level ≥ 7 depending on the duration of the drive\n\nScenario prerequisite:\n- Driver does NOT wear head target \n- KSS levels in national language are linked in Rating GUI\n- Rating GUI is visible to the driver and audio is audible on the driver seat\n- Driver sits on driver seat, wears seatbelt and vehicle doors are closed\n\nScenario description:\n- Start of recording and Rating GUI\n- Driver must move their head in a slow 8-movement for ~10s\n- Driver rates himself\n- Driver starts the drive\n- Driver follows route shown by the simulator\n- Driver must rate their drowsiness every 5min\n- Driver stops the drive \n- Stop of recording",
+      "name": "Drowsiness Simulator Val 01",
+      "primary_usecase": "validation",
+      "specification": [
+        {
+          "link": "https://rb-alm-19-p-dwa.de.bosch.com:8443/dwa/rm/urn:rational::1-0000000000000000-O-584-00058320?doors.view=00000002&osUser=true",
+          "revision": null,
+          "type": "doors"
+        }
+      ],
+      "tags": null
+    },
+    {
+      "_id": "Fake_Driver_Paper_Static_01",
+      "creation_timestamp": "2023-12-12T16:04:01.174920",
+      "description": "Scenario goal:\n- Provide data with fake driver \n- Spoofing material: \n - Face printed on paper (includes photographs of faces from humans, drawings, etc.) statically positioned before the camera. \n - Face printed on paper with different reflection properties and qualities. \n\nScenario prerequisite:\n- Spoofing material is in the driver headbox during the complete recording \n - Supervisor's head is not trackable to the camera (e.g. wearing IR blocking glasses and a balaclava) \n\nScenario description:\n- Start of recording \n- System must run for ~10s  \n- Supervisor displays spoofing material and moves it if defined \n- Stop of recording",
+      "facial_landmarks_mandatory": false,
+      "name": "Fake Driver Paper Static 01",
+      "primary_usecase": "validation",
+      "specification": [
+        {
+          "link": "https://rb-alm-19-p-dwa.de.bosch.com:8443/dwa/rm/urn:rational::1-0000000000000000-O-580-00058320?doors.view=00000002&osUser=true",
+          "revision": null,
+          "type": "doors"
+        }
+      ],
+      "tags": null
+    },
+    {
+      "_id": "Fake_Driver_Paper_Dynamic_01",
+      "creation_timestamp": "2023-12-12T16:06:01.174920",
+      "description": "Scenario goal:\n- Provide data with fake driver \n- Spoofing material: \n - Face printed on paper dynamically positioned (includes both moving and rotating) before the camera. \n - Face printed on paper with different reflection properties and qualities. \n\nScenario prerequisite:\n- Spoofing material is in the driver headbox during the complete recording \n - Supervisor's head is not trackable to the camera (e.g. wearing IR blocking glasses and a balaclava) \n\nScenario description:\n- Start of recording \n- System must run for ~10s  \n- Supervisor displays spoofing material and moves it if defined \n- Stop of recording",
+      "facial_landmarks_mandatory": false,
+      "name": "Fake Driver Paper Dynamic 01",
+      "primary_usecase": "validation",
+      "specification": [
+        {
+          "link": "https://rb-alm-19-p-dwa.de.bosch.com:8443/dwa/rm/urn:rational::1-0000000000000000-O-1046-00058320?doors.view=00000002&osUser=true",
+          "revision": null,
+          "type": "doors"
+        }
+      ],
+      "tags": null
+    },
+    {
+      "_id": "Fake_Driver_Paper_Deformed_01",
+      "creation_timestamp": "2023-12-12T16:08:01.174920",
+      "description": "Scenario goal:\n- Provide data with fake driver \n- Spoofing material: \n - Face printed on paper deformed (includes bending the paper in different ways to make it appear less 2D) before the camera. \n - Face printed on paper with different reflection properties and qualities. \n\nScenario prerequisite:\n- Spoofing material is in the driver headbox during the complete recording \n - Supervisor's head is not trackable to the camera (e.g. wearing IR blocking glasses and a balaclava) \n\nScenario description:\n- Start of recording \n- System must run for ~10s  \n- Supervisor displays spoofing material and moves it if defined \n- Stop of recording",
+      "facial_landmarks_mandatory": false,
+      "name": "Fake Driver Paper Deformed 01",
+      "primary_usecase": "validation",
+      "specification": [
+        {
+          "link": "https://rb-alm-19-p-dwa.de.bosch.com:8443/dwa/rm/urn:rational::1-0000000000000000-O-1046-00058320?doors.view=00000002&osUser=true",
+          "revision": null,
+          "type": "doors"
+        }
+      ],
+      "tags": null
+    },
+    {
+      "_id": "Fake_Driver_Doll_Unrealistic_Static_01",
+      "creation_timestamp": "2023-12-12T16:09:01.174920",
+      "description": "Scenario goal:\n- Provide data with fake driver \n- Spoofing material: \n - 3D dolls and mannequins, not looking very lifelike, statically positioned before the camera. \n\nScenario prerequisite:\n- Spoofing material is in the driver headbox during the complete recording \n - Supervisor's head is not trackable to the camera (e.g. wearing IR blocking glasses and a balaclava) \n\nScenario description:\n- Start of recording \n- System must run for ~10s  \n- Supervisor displays spoofing material and moves it if defined \n- Stop of recording",
+      "facial_landmarks_mandatory": false,
+      "name": "Fake Driver Doll Unrealistic Static 01",
+      "primary_usecase": "validation",
+      "specification": [
+        {
+          "link": "https://rb-alm-19-p-dwa.de.bosch.com:8443/dwa/rm/urn:rational::1-0000000000000000-O-1048-00058320?doors.view=00000002&osUser=true",
+          "revision": null,
+          "type": "doors"
+        }
+      ],
+      "tags": null
+    },
+    {
+      "_id": "Fake_Driver_Doll_Unrealistic_Dynamic_01",
+      "creation_timestamp": "2023-12-12T16:10:51.174920",
+      "description": "Scenario goal:\n- Provide data with fake driver \n- Spoofing material: \n - 3D dolls and mannequins, not looking very lifelike, dynamically positioned (includes both moving and rotating) before the camera. \n\nScenario prerequisite:\n- Spoofing material is in the driver headbox during the complete recording \n - Supervisor's head is not trackable to the camera (e.g. wearing IR blocking glasses and a balaclava) \n\nScenario description:\n- Start of recording \n- System must run for ~10s  \n- Supervisor displays spoofing material and moves it if defined \n- Stop of recording",
+      "facial_landmarks_mandatory": false,
+      "name": "Fake Driver Doll Unrealistic Dynamic 01",
+      "primary_usecase": "validation",
+      "specification": [
+        {
+          "link": "https://rb-alm-19-p-dwa.de.bosch.com:8443/dwa/rm/urn:rational::1-0000000000000000-O-1049-00058320?doors.view=00000002&osUser=true",
+          "revision": null,
+          "type": "doors"
+        }
+      ],
+      "tags": null
+    },
+    {
+      "_id": "Fake_Driver_Doll_Lifelike_Static_01",
+      "creation_timestamp": "2023-12-12T16:10:01.174920",
+      "description": "Scenario goal:\n- Provide data with fake driver \n- Spoofing material: \n - 3D dolls and mannequins, not looking very lifelike, dynamically positioned (includes both moving and rotating) before the camera. \n\nScenario prerequisite:\n- Spoofing material is in the driver headbox during the complete recording \n - Supervisor's head is not trackable to the camera (e.g. wearing IR blocking glasses and a balaclava) \n\n Scenario description:\n- Start of recording \n- System must run for ~10s  \n- Supervisor displays spoofing material and moves it if defined \n- Stop of recording",
+      "facial_landmarks_mandatory": false,
+      "name": "Fake Driver Doll Lifelike Static 01",
+      "primary_usecase": "validation",
+      "specification": [
+        {
+          "link": "https://rb-alm-19-p-dwa.de.bosch.com:8443/dwa/rm/urn:rational::1-0000000000000000-O-1050-00058320?doors.view=00000002&osUser=true",
+          "revision": null,
+          "type": "doors"
+        }
+      ],
+      "tags": null
+    },
+    {
+      "_id": "Fake_Driver_Doll_Lifelike_Dynamic_01",
+      "creation_timestamp": "2023-12-12T16:11:01.174920",
+      "description": "Scenario goal:\n- Provide data with fake driver \n- Spoofing material: \n - 3D dolls and mannequins or masks (worn by a head-shaped object) that looks lifelike, dynamically positioned (includes both moving and rotating) before the camera - with the actual face being static (facial expressions, eyes, eyelids, mouth etc.). \n\nScenario prerequisite:\n- Spoofing material is in the driver headbox during the complete recording \n - Supervisor's head is not trackable to the camera (e.g. wearing IR blocking glasses and a balaclava) \n\nScenario description:\n- Start of recording \n- System must run for ~10s  \n- Supervisor displays spoofing material and moves it if defined \n- Stop of recording",
+      "facial_landmarks_mandatory": false,
+      "name": "Fake Driver Doll Lifelike Dynamic 01",
+      "primary_usecase": "validation",
+      "specification": [
+        {
+          "link": "https://rb-alm-19-p-dwa.de.bosch.com:8443/dwa/rm/urn:rational::1-0000000000000000-O-1051-00058320?doors.view=00000002&osUser=true",
+          "revision": null,
+          "type": "doors"
+        }
+      ],
+      "tags": null
+    },
+    {
+      "_id": "Fake_Driver_Video_01",
+      "creation_timestamp": "2023-12-12T16:12:01.174920",
+      "description": "Scenario goal:\n- Provide data with fake driver \n- Spoofing material: \n - Video of a real person behaving as a driver, or any of the other supported spoofing attempts, being shown on different electronic devices. \n\nScenario prerequisite:\n- Spoofing material is in the driver headbox during the complete recording \n - Supervisor's head is not trackable to the camera (e.g. wearing IR blocking glasses and a balaclava) \n\n Scenario description:\n- Start of recording \n- System must run for ~10s  \n- Supervisor displays spoofing material and moves it if defined \n- Stop of recording",
+      "facial_landmarks_mandatory": false,
+      "name": "Fake Driver Video 01",
+      "primary_usecase": "validation",
+      "specification": [
+        {
+          "link": "https://rb-alm-19-p-dwa.de.bosch.com:8443/dwa/rm/urn:rational::1-0000000000000000-O-1052-00058320?doors.view=00000002&osUser=true",
+          "revision": null,
+          "type": "doors"
+        }
+      ],
+      "tags": null
+    }
+  ],
+  "sensor_systems": [
+    {
+      "comment": null,
+      "description": null,
+      "ecu": {
+        "can_diagnostic_cmds": null,
+        "comments": null,
+        "sample_stage": "EV30",
+        "serial": "",
+        "soc": "Tolimann",
+        "sw_build": "FD3_SWP3.5",
+        "sw_build_pipeline": "FD301_TOL27_04_04_01",
+        "sw_comments": null
+      },
+      "name": null,
+      "pc": null,
+      "project": "ford dat3 dms",
+      "sensor_class": "camera bosch",
+      "sensor_system_class": "dms",
+      "sensors": [
+        {
+          "sensor_device_id": "dfc_test_id01",
+          "adtf_stream_name": "dfc_ford_ir_image_raw_frame_1",
+          "calibration_file": null,
+          "comment": {
+            "author": "Tiger_42",
+            "comment": "ISP FW Version: 202310272023111",
+            "timestamp_utc": "2024-02-06T12:00:23+01:00"
+          },
+          "config": null,
+          "name": "Ford DFC",
+          "optical_measurement_protocol": null,
+          "position": "dashboard center",
+          "project": "ford dat3 dms",
+          "sample_stage": "B2",
+          "sensor_class": "camera bosch",
+          "serial": "2023"
+        }
+      ],
+      "target_process_step": "validation"
+    },
+    {
+      "comment": null,
+      "description": null,
+      "ecu": null,
+      "name": "smarttrack 3",
+      "pc": null,
+      "project": "ford dat3 dms",
+      "sensor_class": "real time tracking",
+      "sensor_system_class": "reference",
+      "sensors": [
+        {
+          "sensor_device_id": "sma_test_id02",
+          "adtf_stream_name": "smarttrack_ht_1",
+          "brand": "ART",
+          "calibration_file": null,
+          "comments": null,
+          "config": null,
+          "model": "SmartTrack",
+          "name": "smarttrack 3",
+          "position": "dashboard center",
+          "sensor_class": "real time tracking",
+          "serial": "10034",
+          "tracking_targets": [
+            {
+              "file": {
+                "base_path_dfs": "//abtvdfs1.de.bosch.com/ismdfs/ilm/abt/TOP80_FABIAN",
+                "relative_path": "10_DriveDatabase_RAW/510_IOS_Studies_Pretest/2023_STLA_ValidationToolchain/ADTF/Projects/20221114_STLA_Germany_MC2/ART/TargetData/HT0.txt",
+                "storage_type": "network share"
+              },
+              "serial": "T2",
+              "type": "head target"
+            }
+          ],
+          "version": "3"
+        }
+      ],
+      "target_process_step": null
+    },
+    {
+      "comment": null,
+      "description": null,
+      "ecu": null,
+      "name": "multicam 2",
+      "pc": null,
+      "project": "ford dat3 dms",
+      "sensor_class": "camera commercial",
+      "sensor_system_class": "reference",
+      "sensors": [
+        {
+          "sensor_device_id": "mul_test_id03",
+          "adtf_stream_name": "multicam_low_driver_apillar",
+          "brand": "Teledyne",
+          "calibration_file": null,
+          "comments": null,
+          "config": null,
+          "model": "Dalsa Ginie Nano",
+          "name": "Multicam Apillar",
+          "position": "a pillar",
+          "sensor_class": "camera commercial",
+          "serial": "MC_M4060_L",
+          "version": "5G-M4060"
+        },
+        {
+          "sensor_device_id": "mul_test_id08",
+          "adtf_stream_name": "multicam_cid",
+          "brand": "Teledyne",
+          "calibration_file": null,
+          "comments": null,
+          "config": null,
+          "model": "Dalsa Ginie Nano",
+          "name": "Multicam CID",
+          "position": "dashboard center",
+          "sensor_class": "camera commercial",
+          "serial": "MC_M4060_R",
+          "version": "5G-M4060"
+        }
+      ],
+      "target_process_step": null
+    },
+    {
+      "comment": null,
+      "description": null,
+      "ecu": null,
+      "name": "multicam 2",
+      "pc": null,
+      "project": "ford dat3 dms",
+      "sensor_class": "camera commercial",
+      "sensor_system_class": "reference",
+      "sensors": [
+        {
+          "sensor_device_id": "mul_test_id04",
+          "adtf_stream_name": "multicam_low_driver_apillar",
+          "brand": "Teledyne",
+          "calibration_file": null,
+          "comments": null,
+          "config": null,
+          "model": "Dalsa Ginie Nano",
+          "name": "Multicam Apillar",
+          "position": "a pillar",
+          "sensor_class": "camera commercial",
+          "serial": "MC_M4060_L",
+          "version": "5G-M4060"
+        },
+        {
+          "sensor_device_id": "mul_test_id05",
+          "adtf_stream_name": "multicam_cid",
+          "brand": "Teledyne",
+          "calibration_file": null,
+          "comments": null,
+          "config": null,
+          "model": "Dalsa Ginie Nano",
+          "name": "Multicam CID",
+          "position": "dashboard center",
+          "sensor_class": "camera commercial",
+          "serial": "MC_M4060_R",
+          "version": "5G-M4060"
+        }
+      ],
+      "target_process_step": null
+    }
+  ],
+  "supervisors": null,
+  "suppliers": [
+    "Robert Bosch GmbH",
+    "EDAG Engineering GmbH"
+  ],
+  "vehicle": {
+    "_id": "JN1TDAT32U0108461_5",
+    "brand": "nissan",
+    "model": "x-trail 2018",
+    "nickname": "nissan",
+    "number_plates": [
+      "LB-XP-8469"
+    ],
+    "right_hand_drive": false,
+    "seat_config": [
+      [
+        "forward","no_seat","forward"
+      ],
+      [
+        "forward","forward","forward"
+      ]
+    ],
+    "seat_count": 7,
+    "vin": "JN1TDAT32U0108461",
+    "seatbelt_NIR_color": null
+  },
+  "crs": [
+    {
+      "crs_id": "CrSy67",
+      "brand": "Britax_Romer",
+      "model": "Rodi_tiledGreyBlack",
+      "crs_type": "backless_booster",
+      "ECE_R44_04_category": "2,3",
+      "has_suncover": null,
+      "has_impact_cushion_shield": "False",
+      "supports_base_station": null
+    },
+    {
+      "crs_id": "CrSy69",
+      "brand": "Britax_Romer",
+      "model": "Auto XS LM208",
+      "market_introduction_year": 2020,
+      "crs_type": "backless_booster",
+      "ECE_R44_04_category": "2,3",
+      "has_suncover": "false",
+      "has_impact_cushion_shield": "true",
+      "supports_base_station": "false"
+    },
+    {
+      "crs_id": "G0INF_Cocoon_plus",
+      "brand": "Britax_Romer",
+      "model": "Cocoon+",
+      "crs_type": "infant_carrier",
+      "ECE_R44_04_category": "0",
+      "market_introduction_year": 2020,
+      "supports_base_station": true
+    },
+    {
+      "crs_id": "G012INF_Shield_plus",
+      "brand": "Britax_Romer",
+      "model": "Shield+",
+      "crs_type": "infant_carrier",
+      "ECE_R44_04_category": "0,1,2",
+      "has_suncover": "false",
+      "has_impact_cushion_shield": "false",
+      "supports_base_station": "true",
+      "market_introduction_year": 2023
+    },
+    {
+      "crs_id": "G0123HB_Captain_Pro",
+      "brand": "Britax_Romer",
+      "model": "Captain+Pro",
+      "crs_type": "high_back_booster",
+      "ECE_R44_04_category": "1,2,3",
+      "has_suncover": true,
+      "has_impact_cushion_shield": true,
+      "market_introduction_year": 2021
+    }
+  ]
+}
