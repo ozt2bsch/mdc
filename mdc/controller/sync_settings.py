@@ -1,6 +1,7 @@
 import os,sys
 import json
 from mdc.controller.configini_parser import configHandler
+from mdc.model.locationModel import LocationModel
 from mdc.model.scenarioModel import ScenarioModel
 from data_model.dbgui_input import DbGuiInput,PersonListInput,SupervisorsListInput,CRSInfoListInput
 from mdc.model.supervisorModel import SupervisorModel
@@ -48,5 +49,10 @@ print(" ",len(oDBGuiInput.supervisors) if oDBGuiInput.supervisors else 0, "Super
 if oDBGuiInput.supervisors:
     for sv in oDBGuiInput.supervisors:
         SupervisorModel().store_to.pool(SupervisorModel.Supervisor(**sv.dict()))
+
+print("parsing locations...")
+print(" ",1 if oDBGuiInput.location else 0, "Location found in input_data.json")
+LocationModel().store_to.pool(LocationModel.Location(**oDBGuiInput.location.dict()))
+LocationModel().store_to.sequence(LocationModel.Location(**oDBGuiInput.location.dict()))
 
 pass
