@@ -20,17 +20,16 @@ class LocationModel():
         @property
         def check_fillout(self) -> bool:
             """Check if all mandatory fields are filled out"""
-            _continent: bool = True if self.continent not in [None, ""] else False
-            _country: bool = True if self.country not in [None, ""] else False
+            _continent: bool = True if self.continent in list(continents) else False
+            _country: bool = True if self.country in list(countries_ISO3166) else False
             _city: bool = True if self.city not in [None, ""] else False
 
-            match _continent, _country, _city:
-                case False, _, _:
-                    print("continent is not filled out")
-                case _, False, _:
-                    print("country is not filled out")
-                case _, _, False:
-                    print("city is not filled out")
+            match _continent:
+                case False: print("continent has invalid value or is not filled out")
+            match _country:
+                case False: print("country has invalid value or is not filled out")
+            match _city:
+                case False: print("city is not filled out")
 
             return all([_continent, _country, _city])
 
@@ -79,7 +78,7 @@ class LocationModel():
                     container.append(copy.deepcopy(data))
                     print(f"Location '{data.city}, {data.country.value}' added to container")
                     return True
-                print(f"Location '{data.city}, {data.country.value}' is not valid. Please check the location data.")
+                print(f"Location '{data}' is not valid. Please check the location data.")
                 return False
 
             def __parse(self, container: list, data: LocationModel.Location | dict | None):
@@ -105,3 +104,22 @@ class LocationModel():
                 return self.__parse(self.model.sequence, data)
 
         return To(self)
+
+if __name__ == "__main__":
+    loc1= LocationModel()
+    loc2 = LocationModel()
+    loc1.location.continent = continents.EU
+    loc1.location.country = countries_ISO3166.DE
+    loc1.location.city = "Munich"
+
+    loc2.location.continent = "asd"
+    loc2.location.country = 'qwe'
+    loc2.location.city = "Hamburg"
+
+    print(loc1.location.check_fillout)
+    print(loc2.location.check_fillout)
+
+    loc1.store_to.pool()
+    loc2.store_to.pool()
+
+    print("Pool:", [loc for loc in loc1.pool])
