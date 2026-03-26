@@ -5,6 +5,7 @@ from mdc.model.locationModel import LocationModel
 from mdc.model.scenarioModel import ScenarioModel
 from data_model.dbgui_input import DbGuiInput,PersonListInput,SupervisorsListInput,CRSInfoListInput
 from mdc.model.supervisorModel import SupervisorModel
+from mdc.model.vehicleModel import VehicleModel
 
 #Check input_data.json file exists
 if not os.path.isfile(os.path.join(configHandler.input_json)):
@@ -54,5 +55,10 @@ print("parsing locations...")
 print(" ",1 if oDBGuiInput.location else 0, "Location found in input_data.json")
 LocationModel().store_to.pool(LocationModel.Location(**oDBGuiInput.location.dict()))
 LocationModel().store_to.sequence(LocationModel.Location(**oDBGuiInput.location.dict()))
+
+print("parsing vehicle...")
+print(" ",1 if oDBGuiInput.vehicle else 0, "Vehicle found in input_data.json")
+if oDBGuiInput.vehicle:
+    VehicleModel().store_to.pool(VehicleModel.Vehicle(**oDBGuiInput.vehicle.dict()))
 
 pass
