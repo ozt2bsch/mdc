@@ -33,22 +33,22 @@ class ScenarioModel():
 
             match _id:
                 case False:
-                    print("id is not filled out")
+                    print("id is not filled properly")
             match _timestamp:
                 case False:
-                    print("creation_timestamp is not filled out")
+                    print("creation_timestamp is not filled properly")
             match _name:
                 case False:
-                    print("name is not filled out")
+                    print("name is not filled properly")
             match _primary_usecase:
                 case False:
-                    print("primary_usecase is not filled out")
+                    print("primary_usecase is not filled properly or invalid")
             match _description:
                 case False:
-                    print("description is not filled out")
+                    print("description is not filled properly")
             match _facial_landmark:
                 case False:
-                    print("facial_landmarks_mandatory is not filled out")
+                    print("facial_landmarks_mandatory is not filled properly or invalid")
 
             return all([_id, _timestamp, _name, _primary_usecase, _description, _facial_landmark])
 
@@ -125,4 +125,3 @@ class ScenarioModel():
                 return self.__parse(self.model.sequence, data)
 
         return To(self)
-
