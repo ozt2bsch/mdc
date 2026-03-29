@@ -3,17 +3,22 @@ import QtQuick.Controls
 import QtQuick.Controls.Material
 import QtQuick.Layouts
 import QtQuick.Dialogs
+import QtQuick.Window
 
 ApplicationWindow {
     id: mainwindow
     property alias mainStack: stackView
 
+    // High DPI scaling properties for 4K monitor support
+    readonly property real dpiFactor: Screen.logicalPixelDensity / 96
+    readonly property real scaleFactor: Math.max(1.0, dpiFactor)
+
     Material.theme: Material.Dark
     Material.accent: Material.Purple
 
     visible: true
-    width: 900
-    height: 1000
+    width: 900 * scaleFactor
+    height: 1000 * scaleFactor
     title: "MetaDataCollector"
     color: BoschColors.gray70
 
@@ -21,7 +26,7 @@ ApplicationWindow {
 
     Image {
         id: imgBoschStrip
-        height: 8
+        height: 8 * mainwindow.scaleFactor
         width: parent.width
         source: "../assets/images/boschDesign.png"
     }
@@ -29,12 +34,12 @@ ApplicationWindow {
     Rectangle {
         id: sideBar
         anchors.top: imgBoschStrip.bottom
-        width: 50
+        width: 50 * mainwindow.scaleFactor
         height: parent.height - imgBoschStrip.height
         color: BoschColors.gray80
         ColumnLayout {
             height: parent.height
-            spacing: 3
+            spacing: 3 * mainwindow.scaleFactor
             ToolButton {
                 Layout.alignment: Qt.AlignHCenter
                 ButtonGroup.group: sideMenuButtonGroup
@@ -57,7 +62,7 @@ ApplicationWindow {
             }
             ToolButton {
                 Layout.alignment: Qt.AlignHCenter
-                Layout.topMargin: -10
+                Layout.topMargin: -10 * mainwindow.scaleFactor
                 ButtonGroup.group: sideMenuButtonGroup
                 display: AbstractButton.IconOnly
                 icon.source: "../assets/images/person.svg"
