@@ -43,17 +43,17 @@ class SupervisorModel:
                 if isValid:
                     if not container:
                         container.append(copy.deepcopy(data))
-                        print(f"Supervisor '{data.name}' added to container")
+                        print(f"Supervisor '{data.name}-{data.company}' added to container")
                         return True
                     for idx,sv in enumerate(container):
-                        if sv.name == data.name:
+                        if sv.name == data.name and sv.company == data.company:
                             container[idx] = copy.deepcopy(data)
-                            print(f"Supervisor '{data.name}' updated in container")
+                            print(f"Supervisor '{data.name}-{data.company}' updated in container")
                             return True
                     container.append(copy.deepcopy(data))
-                    print(f"Supervisor '{data.name}' added to container")
+                    print(f"Supervisor '{data.name}-{data.company}' added to container")
                     return True
-                print(f"Supervisor '{data.name}' is not valid. Please check the supervisor data.")
+                print(f"Supervisor '{data.name}-{data.company}' is not valid. Please check the supervisor data.")
                 return False
 
             def __parse(self, container: list, data: SupervisorModel.Supervisor | dict | None = None):
@@ -78,6 +78,21 @@ class SupervisorModel:
             def sequence(self,data: SupervisorModel.Supervisor | dict | None = None):
                 """Store the current supervisor to the sequence"""
                 return self.__parse(self.model.sequence, data)
-
-
         return To(self)
+
+    def load_supervisor(self, name: str=None, company: CampaignSuppliers=None) -> bool|None:
+        if not self.pool:
+            print("Supervisor pool is empty. Cannot load supervisor.")
+            return None
+        if len(self.pool) == 1:
+            print("Only one supervisor in pool. Loading that supervisor.")
+            self.supervisor = copy.deepcopy(self.pool[0])
+            return True
+        for sv in self.pool:
+            if sv.name == name and sv.company == company:
+                print(f"Supervisor '{name}-{company}' found in pool. Loading supervisor.")
+                self.supervisor = copy.deepcopy(sv)
+                return True
+        print(f"Supervisor '{name}-{company}' not found in pool. Cannot load supervisor.")
+        return None
+

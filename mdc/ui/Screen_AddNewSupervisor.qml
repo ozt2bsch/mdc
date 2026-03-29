@@ -8,6 +8,7 @@ Item {
 
     Component.onCompleted: {
         console.log("Screen_AddNewSupervisor loaded")
+        svCtrl.initialize("addNewSupervisor")
     }
      ScreenTitle {
         id: supervisorTitle
@@ -17,9 +18,9 @@ Item {
     }
     ColumnLayout {
         anchors.top: supervisorTitle.bottom
-        anchors.topMargin: 40
+        anchors.topMargin: 50
         anchors.horizontalCenter: parent.horizontalCenter
-        width: 400
+        width: parent.width - 400
         spacing: 20
         RowLayout {
             anchors.topMargin: 20
@@ -30,8 +31,10 @@ Item {
             TextField {
                 id: tfSupervisor
                 Layout.fillWidth: true
-                width: 400
                 placeholderText: "Enter supervisor name"
+                onTextChanged: {
+                    svCtrl.sv_name = text
+                }
             }
         }
         RowLayout {
@@ -41,19 +44,22 @@ Item {
             }
             ComboBox {
                 id: cbCompany
+                property string placeholderText: "Select a company"
                 Layout.leftMargin: 5
                 Layout.fillWidth: true
-                model: ["Bosch", "Company A", "Company B"]
+                model: svCtrl.lstCampaignSuppliers
+                currentIndex: svCtrl.lstCampaignSuppliers.indexOf(svCtrl.sv_company)
+                displayText: currentIndex === -1 ? placeholderText : currentText
+                onActivated: {
+                    svCtrl.sv_company = currentText
+                }
             }
         }
         RowLayout {
             Layout.fillWidth: true
-            Layout.topMargin: 20
+            Layout.topMargin: 30
             Button {
                 text: "Back"
-                Layout.leftMargin: 20
-                Layout.rightMargin: 20
-                //Layout.fillWidth: true
                 onClicked: {
                     mainStack.pop()
                     console.log("Back clicked")
@@ -62,13 +68,17 @@ Item {
             Item {Layout.fillWidth: true}
             Button {
                 text: "Add"
-                Layout.leftMargin: 20
-                Layout.rightMargin: 20
-                //Layout.fillWidth: true
                 onClicked: {
-                    console.log("Add clicked")
+                    svCtrl.add_new_supervisor()
+                    console.log("Add new supervisor clicked")
                 }
             }
+        }
+    }
+    Connections {
+        target: svCtrl
+        function onPop_screen() {
+            mainStack.pop()
         }
     }
 }
