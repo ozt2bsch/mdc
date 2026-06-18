@@ -3,7 +3,7 @@ import copy
 from typing import Optional, List
 from dataclasses import dataclass, field, asdict
 
-from data_model.location import Location,continents,countries_ISO3166
+from issp_recording_datamodel.location import Location,continents,countries_ISO3166
 
 
 class LocationModel():

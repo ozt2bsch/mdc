@@ -2,18 +2,18 @@ import datetime
 from dataclasses import dataclass, field
 from typing import List, Optional, Union
 
-from data_model.reference import MongoDBRef
-from data_model.dbgui_input import DbGuiInput
-from data_model.common import Comment, Supervisor
-from data_model.scenario import Scenario
-from data_model.recording_campaign import RecordingCampaign
-from data_model.occupant import Occupant
-from data_model.seatbelt import Seatbelt
-from data_model.crs import CRSInfo
-from data_model.sensor_system import SensorSystem
-from data_model.object import ObjectInVehicle
-from data_model.custom_data import CustomData
-from data_model.environment import Environment, EmptySeatClassification
+from issp_recording_datamodel.reference import MongoDBRef
+from issp_recording_datamodel.dbgui_input import DbGuiInput
+from issp_recording_datamodel.common import Comment, Supervisor
+from issp_recording_datamodel.scenario import Scenario
+from issp_recording_datamodel.recording_campaign import RecordingCampaign
+from issp_recording_datamodel.occupant import Occupant
+from issp_recording_datamodel.seatbelt import Seatbelt
+from issp_recording_datamodel.crs import CRSInfo
+from issp_recording_datamodel.sensor_system import SensorSystem
+from issp_recording_datamodel.object import ObjectInVehicle
+from issp_recording_datamodel.custom_data import CustomData
+from issp_recording_datamodel.environment import Environment, EmptySeatClassification
 
 from mdc.model.supervisorModel import SupervisorModel
 

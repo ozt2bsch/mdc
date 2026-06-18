@@ -3,7 +3,7 @@ import json
 import controller.configini_parser as configHandler
 from model.locationModel import LocationModel
 from model.scenarioModel import ScenarioModel
-from data_model.dbgui_input import DbGuiInput,PersonListInput,SupervisorsListInput,CRSInfoListInput
+from issp_recording_datamodel.dbgui_input import DbGuiInput,PersonListInput,SupervisorsListInput,CRSInfoListInput
 from model.supervisorModel import SupervisorModel
 from model.vehicleModel import VehicleModel
 

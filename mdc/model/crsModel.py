@@ -3,10 +3,10 @@ import copy
 from dataclasses import dataclass, field, asdict
 from typing import List, Optional
 
-from data_model.common import NIRColors
-from data_model.environment import Seat
-from data_model.crs import CRS,CRSInfo, MarketRegion,ECER4404Category,ISizeCategory,CRSType,ColorDesigns,RestraintTypes,InstallMethods
-from data_model.crs import CrsStrapState,SuncoverState,CRSOccupancyEnum,InstallationStateEnum,ConditionEnum,CRSRotation
+from issp_recording_datamodel.common import NIRColors
+from issp_recording_datamodel.environment import Seat
+from issp_recording_datamodel.crs import CRS,CRSInfo, MarketRegion,ECER4404Category,ISizeCategory,CRSType,ColorDesigns,RestraintTypes,InstallMethods
+from issp_recording_datamodel.crs import CrsStrapState,SuncoverState,CRSOccupancyEnum,InstallationStateEnum,ConditionEnum,CRSRotation
 
 class CRSModel:
     pool = []

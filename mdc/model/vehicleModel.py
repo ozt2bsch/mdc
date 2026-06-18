@@ -3,8 +3,8 @@ import copy
 from typing import List,Optional
 from dataclasses import dataclass, field, asdict
 from typing import Optional
-from data_model.common import NIRColors
-from data_model.environment import Vehicle,SeatOrientation
+from issp_recording_datamodel.common import NIRColors
+from issp_recording_datamodel.environment import Vehicle,SeatOrientation
 
 
 class VehicleModel():

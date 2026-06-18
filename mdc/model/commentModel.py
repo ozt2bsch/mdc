@@ -3,7 +3,7 @@ import datetime
 from typing import Optional
 
 from dataclasses import dataclass, asdict, field
-from data_model.common import Comment as dmComment
+from issp_recording_datamodel.common import Comment as dmComment
 
 
 class CommentModel():

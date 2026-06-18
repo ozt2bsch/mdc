@@ -1,7 +1,7 @@
 from mdc.controller.appEngine import engine
 from PySide6.QtCore import QObject, Signal, Slot, Property
 from mdc.model.supervisorModel import SupervisorModel
-from data_model.common import CampaignSuppliers
+from issp_recording_datamodel.common import CampaignSuppliers
 
 class SupervisorController(QObject):
     #Properties
