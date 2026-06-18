@@ -1,6 +1,6 @@
 .venv
 .vscode
-!mdc/model/DataModel
+!mdc/model/issp-recording-datamodel
 poetry.lock
 __pycache__
 .pytest_cache

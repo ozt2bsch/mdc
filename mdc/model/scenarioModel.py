@@ -4,7 +4,7 @@ import datetime
 from dataclasses import dataclass, field, asdict
 from typing import Optional, List
 
-from data_model.scenario import Scenario,ProcessStep,Specification
+from issp_recording_datamodel.scenario import Scenario,ProcessStep,Specification
 
 class ScenarioModel():
     pool = []
@@ -78,7 +78,6 @@ class ScenarioModel():
 
     def reset(self):
         self.scenario = self.Scenario()
-
 
     @property
     def store_to(self):

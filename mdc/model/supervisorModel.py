@@ -2,7 +2,7 @@ import copy
 from typing import Optional
 from dataclasses import dataclass,field
 
-from data_model.common import Supervisor, CampaignSuppliers
+from issp_recording_datamodel.common import Supervisor, CampaignSuppliers
 
 class SupervisorModel:
     pool = []

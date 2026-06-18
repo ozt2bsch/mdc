@@ -1,12 +1,7 @@
 {
     "python.analysis.extraPaths": [
-        "./mdc/model/DataModel"
+        "./mdc/model/issp-recording-datamodel"
     ],
     "python-envs.defaultEnvManager": "ms-python.python:poetry",
-    "python-envs.defaultPackageManager": "ms-python.python:poetry",
-    "python.testing.pytestArgs": [
-        "${workspaceFolder}/tests",
-        "-v",
-        "-s"
-    ]
+    "python-envs.defaultPackageManager": "ms-python.python:poetry"
 }
