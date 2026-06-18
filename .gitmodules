@@ -1,3 +1,3 @@
-[submodule "mdc/model/DataModel"]
-	path = mdc/model/DataModel
-	url = https://github.boschdevcloud.com/ISS-P/DataModel.git
+[submodule "mdc/model/issp-recording-datamodel"]
+	path = mdc/model/issp-recording-datamodel
+	url = https://github.boschdevcloud.com/ISS-P/issp-recording-datamodel.git
