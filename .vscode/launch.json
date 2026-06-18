@@ -7,7 +7,7 @@
 
         {
             "name": "run mdc",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "${workspaceFolder}/mdc/__main__.py",
             "console": "integratedTerminal"

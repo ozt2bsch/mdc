@@ -1,9 +1,9 @@
 .venv
 .vscode
-!mdc/model/issp-recording-datamodel
-poetry.lock
-__pycache__
 .pytest_cache
+__pycache__
+poetry.lock
+!mdc/model/issp-recording-datamodel
 *.pyc
 Settings/crs.json
 Settings/Persons.json
